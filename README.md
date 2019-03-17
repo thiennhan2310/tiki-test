@@ -13,6 +13,6 @@ run script `docker-compose up -d app`
 
 
 
-# To access admin dashboard 
+# To access admin dashboard (CRUD)
 
 Access url `/login` with account `admin@yopmail.com / 123456789`

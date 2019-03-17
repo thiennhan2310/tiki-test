@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tiki-test/precache-manifest.34bfe5020ef65826489da96b88b2e2cc.js"
+  "/tiki-test/precache-manifest.d7382fc7cbfbfc75acaa6f22bfa19e5a.js"
 );
 
 workbox.clientsClaim();

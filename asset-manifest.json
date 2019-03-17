@@ -1,7 +1,7 @@
 {
   "main.css": "/tiki-test/static/css/main.5849613f.chunk.css",
-  "main.js": "/tiki-test/static/js/main.1e948dd2.chunk.js",
-  "main.js.map": "/tiki-test/static/js/main.1e948dd2.chunk.js.map",
+  "main.js": "/tiki-test/static/js/main.17dbf356.chunk.js",
+  "main.js.map": "/tiki-test/static/js/main.17dbf356.chunk.js.map",
   "static/js/1.2c27cd06.chunk.js": "/tiki-test/static/js/1.2c27cd06.chunk.js",
   "static/js/1.2c27cd06.chunk.js.map": "/tiki-test/static/js/1.2c27cd06.chunk.js.map",
   "runtime~main.js": "/tiki-test/static/js/runtime~main.663c4a3a.js",
@@ -9,6 +9,6 @@
   "static/media/logo.png": "/tiki-test/static/media/logo.bcf3a841.png",
   "static/css/main.5849613f.chunk.css.map": "/tiki-test/static/css/main.5849613f.chunk.css.map",
   "index.html": "/tiki-test/index.html",
-  "precache-manifest.34bfe5020ef65826489da96b88b2e2cc.js": "/tiki-test/precache-manifest.34bfe5020ef65826489da96b88b2e2cc.js",
+  "precache-manifest.d7382fc7cbfbfc75acaa6f22bfa19e5a.js": "/tiki-test/precache-manifest.d7382fc7cbfbfc75acaa6f22bfa19e5a.js",
   "service-worker.js": "/tiki-test/service-worker.js"
 }

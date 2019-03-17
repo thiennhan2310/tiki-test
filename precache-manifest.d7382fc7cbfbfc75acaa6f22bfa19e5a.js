@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/tiki-test/static/js/runtime~main.663c4a3a.js"
   },
   {
-    "revision": "1e948dd2a0d73f9ce21c",
-    "url": "/tiki-test/static/js/main.1e948dd2.chunk.js"
+    "revision": "17dbf356db9992d02593",
+    "url": "/tiki-test/static/js/main.17dbf356.chunk.js"
   },
   {
     "revision": "2c27cd06e1cf9af71ea4",
     "url": "/tiki-test/static/js/1.2c27cd06.chunk.js"
   },
   {
-    "revision": "1e948dd2a0d73f9ce21c",
+    "revision": "17dbf356db9992d02593",
     "url": "/tiki-test/static/css/main.5849613f.chunk.css"
   },
   {
-    "revision": "4f5ce2eb4cae7e028220ce9c8f3706ee",
+    "revision": "7d4a7d3204545fbda69351a78d67ba2f",
     "url": "/tiki-test/index.html"
   }
 ];

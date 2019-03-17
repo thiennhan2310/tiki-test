@@ -1,7 +1,7 @@
 {
   "name": "tiki-test",
   "version": "0.1.0",
-  "homepage": "http://thiennhan2310.github.io/tiki-test",
+  "homepage": "http://localhost:3001",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build &&  cp -r  public/build/. ../Backend/public",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",

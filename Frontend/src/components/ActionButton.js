@@ -2,10 +2,6 @@ import React from 'react';
 
 import { Button } from 'react-bootstrap';
 
-function simulateNetworkRequest() {
-  return new Promise(resolve => setTimeout(resolve, 2000));
-}
-
 class ActionButton extends React.Component {
   constructor(props, context) {
     super(props, context);

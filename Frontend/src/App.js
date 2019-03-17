@@ -20,9 +20,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/login" component={LoginPage} />
-          <Route path="/admin/article/add" component={AddPage} />
-          <Route path="/admin/article/:id/edit" component={EditPage} />
-          <Route path="/admin/articles" component={Dashboard} />
+          <PrivateRoute path="/admin/article/add" component={AddPage} />
+          <PrivateRoute path="/admin/article/:id/edit" component={EditPage} />
+          <PrivateRoute path="/admin/articles" component={Dashboard} />
         </Switch>
       </BrowserRouter>
     );

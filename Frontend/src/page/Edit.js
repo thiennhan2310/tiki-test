@@ -43,7 +43,9 @@ class Edit extends React.Component {
           const { file, position } = image
           data.append(`image-${position}`, file, file.name)
         })
-      apiPut(`/article/${id}`, data)
+      apiPut(`/article/${id}`, data).then(() => {
+        this.fetchArticleDetail(this.state.id)
+      })
     }
   }
 

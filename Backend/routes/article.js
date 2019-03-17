@@ -63,6 +63,9 @@ const _getImageIdx = (key) => {
   return key.split('image-')[1]
 }
 const _editImages = async (articleId, images, currentImages) => {
+  if (!images) {
+    return currentImages
+  }
   const result = currentImages;
   const keys = Object.keys(images)
   for (let i = 0; i < keys.length; i++) {

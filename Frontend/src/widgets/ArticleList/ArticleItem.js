@@ -9,7 +9,7 @@ const ArticleItem = ({ id, title, price, image }) => {
         <ArticleImage name={image} />
         <Card.Body style={{ maxHeight: "130px", overflow: "hidden" }}>
           <Card.Title>
-            <Link to={`/article/${id}`}>{title}</Link>
+            {title}
           </Card.Title>
           <Card.Text>
             {price} VND

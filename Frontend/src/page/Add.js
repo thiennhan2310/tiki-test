@@ -4,6 +4,8 @@ import { Image, Container, Col, Row } from 'react-bootstrap';
 import Title from '../components/Title'
 import { apiGet, apiPost } from '../helpers/api';
 import ArticleFrom from '../widgets/ArticleFrom';
+import { Redirect } from 'react-router-dom';
+
 class Add extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,9 @@ class Add extends React.Component {
     images.forEach(({ file, position }) => {
       data.append(`image-${position}`, file, file.name)
     })
-    apiPost(`/article`, data)
+    apiPost(`/article`, data).then(({ id }) => {
+      return <Redirect to={`/admin/article/${id}/edit`} />;
+    })
   }
 
   render() {

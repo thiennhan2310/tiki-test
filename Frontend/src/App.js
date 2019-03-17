@@ -4,6 +4,7 @@ import AddPage from './page/Add';
 import LoginPage from './page/Login';
 import HomePage from './page/Home';
 import EditPage from './page/Edit';
+import Dashboard from './page/Dashboard';
 import PrivateRoute from './auth/PrivateRoute'
 import {
   BrowserRouter,
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/login" component={LoginPage} />
           <Route path="/admin/article/add" component={AddPage} />
           <Route path="/admin/article/:id/edit" component={EditPage} />
+          <Route path="/admin/articles" component={Dashboard} />
         </Switch>
       </BrowserRouter>
     );

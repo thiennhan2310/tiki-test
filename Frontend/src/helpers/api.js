@@ -38,3 +38,15 @@ export const apiPut = (endpoint, data, headers = {}) => {
     }
   );
 };
+
+export const apiDelete = (endpoint, headers = {}) => {
+  return axios.delete(
+    `${API_URL}${endpoint}`,
+    {
+      headers: Object.assign({},
+        {
+          'Authorization': `Bearer ${getToken()}`,
+        }, headers),
+    }
+  );
+};

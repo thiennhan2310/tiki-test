@@ -10,3 +10,9 @@ run script `cd Frontend && yarn && yarn start`
 update config file Backend/docker-compose.yml line 19,20 to your accurate config
 
 run script `docker-compose up -d app`
+
+
+
+# To access admin dashboard 
+
+Access url `/login` with account `admin@yopmail.com / 123456789`

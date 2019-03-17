@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import DetailPage from './page/Detail';
+import AddPage from './page/Add';
 import LoginPage from './page/Login';
 import HomePage from './page/Home';
 import PrivateRoute from './auth/PrivateRoute'
@@ -15,11 +15,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Switch>
-            <PrivateRoute exact path="/" component={HomePage} />
-            <Route exact path="/login" component={LoginPage} />
-            <PrivateRoute path="/article/:id" component={DetailPage} />
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route path="/admin/add" component={AddPage} />
+        </Switch>
       </BrowserRouter>
     );
   }

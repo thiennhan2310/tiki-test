@@ -41,6 +41,14 @@ router.put('/:id',
     res.json({ title, price, images })
   });
 
+router.delete('/:id',
+  // passport.authenticate('bearer', { session: false }),
+  async function (req, res, next) {
+    const articleId = req.params.id;
+    await Article.deleteOne({ _id: articleId })
+    res.json({ status: true })
+  });
+
 const _addImages = async (articleId, images) => {
   const result = [];
   const keys = Object.keys(images)

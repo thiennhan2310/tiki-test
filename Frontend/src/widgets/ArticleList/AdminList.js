@@ -5,6 +5,7 @@ import { Table, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { apiDelete } from '../../helpers/api';
+import ActionButton from '../../components/ActionButton'
 
 
 class AdminList extends React.Component {
@@ -13,7 +14,7 @@ class AdminList extends React.Component {
   }
 
   handleDelete(id) {
-    apiDelete(`/article/${id}`).then(() => {
+    return apiDelete(`/article/${id}`).then(() => {
       this.props.fetchArticles();
     })
   }
@@ -40,7 +41,11 @@ class AdminList extends React.Component {
                   <Link to={`/admin/article/${_id}/edit`}>Edit</Link>
                 </td>
                 <td>
-                  <Button variant="danger" onClick={() => this.handleDelete(_id)}>Delete</Button>
+                  <ActionButton
+                    type="danger"
+                    onClick={() => this.handleDelete(_id)}
+                    title="Delete"
+                  />
                 </td>
               </tr>
             )}

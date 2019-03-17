@@ -19,8 +19,9 @@ class Add extends React.Component {
     images.forEach(({ file, position }) => {
       data.append(`image-${position}`, file, file.name)
     })
-    apiPost(`/article`, data).then(({ id }) => {
-      return <Redirect to={`/admin/article/${id}/edit`} />;
+    apiPost(`/article`, data).then(({ data }) => {
+      console.log(`/admin/article/${data._id}/edit`);
+      window.location.href = `/admin/article/${data._id}/edit`
     })
   }
 

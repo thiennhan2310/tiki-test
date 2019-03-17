@@ -18,7 +18,7 @@ router.get('/:id', passport.authenticate('bearer', { session: false }), async fu
 });
 
 router.post('/',
-  // passport.authenticate('bearer', { session: false }),
+  passport.authenticate('bearer', { session: false }),
   async function (req, res, next) {
     const { title, price } = req.body;
     const article = await Article.create({ title, price });
@@ -30,7 +30,7 @@ router.post('/',
   });
 
 router.put('/:id',
-  // passport.authenticate('bearer', { session: false }),
+  passport.authenticate('bearer', { session: false }),
   async function (req, res, next) {
     const articleId = req.params.id;
     const { title, price } = req.body;
@@ -42,7 +42,7 @@ router.put('/:id',
   });
 
 router.delete('/:id',
-  // passport.authenticate('bearer', { session: false }),
+  passport.authenticate('bearer', { session: false }),
   async function (req, res, next) {
     const articleId = req.params.id;
     await Article.deleteOne({ _id: articleId })

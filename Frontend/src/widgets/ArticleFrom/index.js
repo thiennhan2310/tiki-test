@@ -4,6 +4,8 @@ import { Alert, Row, Form, Button, Col } from 'react-bootstrap';
 import { setToken } from '../../actions/auth';
 import { apiPost } from '../../helpers/api';
 import ArticleImage from '../../components/ArticleImage';
+import { Link } from 'react-router-dom'
+
 const MAXIMUM_IMAGES = 3;
 
 class ArticleForm extends React.Component {
@@ -102,6 +104,7 @@ class ArticleForm extends React.Component {
             <Button variant="primary" type="submit">
               Submit
             </Button>
+            <Link to={`/admin/articles`} className="col-md-2">Back to list</Link>
           </Form>
         </Col>
       </Row>

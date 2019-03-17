@@ -1,7 +1,7 @@
 {
   "name": "getlink-test",
   "version": "0.1.0",
-  "homepage": "http://thiennhan2310.github.io/getlink-FE",
+  "homepage": "http://thiennhan2310.github.io/tiki-test",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",

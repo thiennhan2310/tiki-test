@@ -1,15 +1,15 @@
 # tiki-test
 
 # 1.Front-end
-update config file /Frontend/src/local.config.js to your accurate config
+update config file Frontend/src/production.config.js to your accurate config
 
-run script `cd Frontend && yarn && yarn start`
+run script `cd Frontend && yarn && yarn build`
 
 # 2.Back-end
 
 update config file Backend/docker-compose.yml line 19,20 to your accurate config
 
-run script `docker-compose up -d app`
+run script `cd Backend && docker-compose up -d app`
 
 
 

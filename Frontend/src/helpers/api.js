@@ -26,3 +26,17 @@ export const apiPost = (endpoint, data, headers = {}) => {
     }
   );
 };
+
+export const apiPut= (endpoint, data, headers = {}) => {
+  return axios.put(
+    `${API_URL}${endpoint}`,
+    data,
+    {
+      headers: Object.assign({}, 
+        {
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${getToken()}`,
+        }, headers),
+    }
+  );
+};

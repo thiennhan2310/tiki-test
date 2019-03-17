@@ -2,7 +2,9 @@ import React from 'react';
 import Logo from '../components/Logo'
 import { Image, Container, Col, Row } from 'react-bootstrap';
 import Title from '../components/Title'
-import { apiGet } from '../helpers/api';
+import { apiGet, apiPut } from '../helpers/api';
+import ArticleFrom from '../widgets/ArticleFrom';
+
 class Edit extends React.Component {
   constructor(props) {
     super(props);
@@ -10,33 +12,50 @@ class Edit extends React.Component {
     this.state = {
       id: this.props.match.params.id,
       title: '',
-      content: '',
+      price: '',
       thumbnail: ''
     }
   }
+
   componentDidMount() {
     this.fetchArticleDetail(this.state.id)
   }
 
   fetchArticleDetail(id) {
-    apiGet(`/article/${this.state.id}`).then(({ data }) => {
+    apiGet(`/article/${id}`).then(({ data }) => {
       this.setState({
         title: data.title,
-        content: data.content,
+        price: data.price,
         thumbnail: data.thumbnail,
       })
     })
-
   }
+
+  onSubmit(id) {
+    return (title, price) => {
+      apiPut(`/article/${id}`, {
+        title,
+        price
+      })
+    }
+  }
+
   render() {
     return (
       <Container>
         <Logo />
-        <Row>
-          <Col md="12"><Image src={this.state.thumbnail} fluid={true} /></Col>
-          <Col md="12"><Title title={this.state.title} size="4" /></Col>
-          <Col md="12">{this.state.content}</Col>
-        </Row>
+        <ArticleFrom
+          key={this.state.title}
+          data={
+            {
+              id: this.state.id,
+              title: this.state.title,
+              price: this.state.price,
+              thumbnail: this.state.thumbnail,
+            }
+          }
+          onSubmit={this.onSubmit(this.state.id)}
+        />
       </Container>
     )
   }

@@ -7,7 +7,8 @@ import { apiPost } from '../../helpers/api';
 class ArticleForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: '', price: '', error: '' };
+    const { title, price } = this.props.data || {};
+    this.state = { title: title || '', price: price || '', error: '' };
     this.inputTitle = this.inputTitle.bind(this);
     this.inputPrice = this.inputPrice.bind(this);
     this.submit = this.submit.bind(this);
@@ -30,12 +31,12 @@ class ArticleForm extends React.Component {
           <Form>
             <Form.Group controlId="formBasicTitle">
               <Form.Label>Title</Form.Label>
-              <Form.Control type="text" placeholder="Title" onChange={(e) => this.inputTitle(e.target.value)} />
+              <Form.Control type="text" defaultValue={this.state.title} placeholder="Title" onChange={(e) => this.inputTitle(e.target.value)} />
             </Form.Group>
 
             <Form.Group controlId="formBasicPrice">
               <Form.Label>Price</Form.Label>
-              <Form.Control type="text" placeholder="Password" onChange={(e) => this.inputPrice(e.target.value)} />
+              <Form.Control type="text" placeholder="Price" defaultValue={this.state.price} onChange={(e) => this.inputPrice(e.target.value)} />
             </Form.Group>
             <Alert variant="danger" hidden={(!this.state.error)}>
               {this.state.error}

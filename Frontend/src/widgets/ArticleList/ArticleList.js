@@ -1,31 +1,33 @@
 import React from 'react';
 import ArticleItem from './ArticleItem';
-import {fetchArticles} from '../../actions/article';
+import { fetchArticles } from '../../actions/article';
 import { Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
 class ArticleList extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchArticles();
   }
-  render(){
+  render() {
     return (
-      <Row style={{marginTop:"35px",marginBottom:"35px"}}>
-        {this.props.articles.map(({_id,title,content,thumbnail})=><ArticleItem key={_id} id={_id} title={title} content={content} thumbnail={thumbnail}/>)}
-       </Row>
-      )
+      <Row style={{ marginTop: "35px", marginBottom: "35px" }}>
+        {this.props.articles.map(({ _id, title, price, thumbnail }) =>
+          <ArticleItem
+            key={_id}
+            id={_id}
+            title={title}
+            price={price}
+            thumbnail={thumbnail}
+          />)}
+      </Row>
+    )
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchArticles : ()=>{
-      dispatch(fetchArticles())
-    }
-  }
-}
+const mapDispatchToProps = { fetchArticles }
+
 const mapStateToProps = (state) => ({
   articles: state.articles.articles
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(ArticleList);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

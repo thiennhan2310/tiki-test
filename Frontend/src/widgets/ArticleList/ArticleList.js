@@ -11,13 +11,13 @@ class ArticleList extends React.Component {
   render() {
     return (
       <Row style={{ marginTop: "35px", marginBottom: "35px" }}>
-        {this.props.articles.map(({ _id, title, price, thumbnail }) =>
+        {this.props.articles.map(({ _id, title, price, images }) =>
           <ArticleItem
             key={_id}
             id={_id}
             title={title}
             price={price}
-            thumbnail={thumbnail}
+            image={images[0]}
           />)}
       </Row>
     )

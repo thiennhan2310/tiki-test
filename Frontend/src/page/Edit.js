@@ -26,24 +26,30 @@ class Edit extends React.Component {
       this.setState({
         title: data.title,
         price: data.price,
-        thumbnail: data.thumbnail,
+        images: data.images,
       })
     })
   }
 
   onSubmit(id) {
-    return (title, price) => {
-      apiPut(`/article/${id}`, {
-        title,
-        price
-      })
+    return (title, price, uploadImages) => {
+      const data = new FormData()
+      data.append('title', title)
+      data.append('price', price)
+
+      uploadImages
+        .filter(image => !!image)
+        .forEach((image) => {
+          const { file, position } = image
+          data.append(`image-${position}`, file, file.name)
+        })
+      apiPut(`/article/${id}`, data)
     }
   }
 
   render() {
     return (
       <Container>
-        <Logo />
         <ArticleFrom
           key={this.state.title}
           data={
@@ -51,7 +57,7 @@ class Edit extends React.Component {
               id: this.state.id,
               title: this.state.title,
               price: this.state.price,
-              thumbnail: this.state.thumbnail,
+              images: this.state.images,
             }
           }
           onSubmit={this.onSubmit(this.state.id)}

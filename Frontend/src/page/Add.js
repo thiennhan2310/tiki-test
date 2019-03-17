@@ -10,18 +10,19 @@ class Add extends React.Component {
     this.onSubmit = this.onSubmit.bind(this)
   }
 
-  onSubmit(title, price) {
-    console.log(title, price);
-    apiPost(`/article`, {
-      title,
-      price
+  onSubmit(title, price, images) {
+    const data = new FormData()
+    data.append('title', title)
+    data.append('price', price)
+    images.forEach(({ file, position }) => {
+      data.append(`image-${position}`, file, file.name)
     })
+    apiPost(`/article`, data)
   }
 
   render() {
     return (
       <Container>
-        <Logo />
         <ArticleFrom
           onSubmit={this.onSubmit}
         />

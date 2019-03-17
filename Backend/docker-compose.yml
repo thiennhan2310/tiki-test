@@ -16,7 +16,7 @@ services:
     container_name: app
     restart: always
     environment: 
-      MONGO_HOST: mongo:27017
+      MONGO_URI: mongodb://tiki:GFczZt27tXsmWtD@ds147965.mlab.com:47965/tiki
       PORT: 3001
     ports:
       - '3001:3001'

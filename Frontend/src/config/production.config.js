@@ -1,2 +1,2 @@
-export const API_URL = 'https://infinite-anchorage-91213.herokuapp.com/api';
-export const IMAGE_HOST = 'http://localhost:3001';
+export const API_URL = 'https://pacific-plains-10343.herokuapp.com/api';
+export const IMAGE_HOST = 'https://pacific-plains-10343.herokuapp.com';

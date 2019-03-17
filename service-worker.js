@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/getlink-FE/precache-manifest.39dd9bebefe9d3709f47fa798ea6bb9c.js"
+  "/tiki-test/precache-manifest.34bfe5020ef65826489da96b88b2e2cc.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/getlink-FE/index.html", {
+workbox.routing.registerNavigationRoute("/tiki-test/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
